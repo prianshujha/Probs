@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String inp=sc.nextLine();
+        StringBuilder words = new StringBuilder();
+        StringBuilder op = new StringBuilder();
+        for(int i=0;i<inp.length();i++){
+            if(inp.charAt(i)==' '  ) {
+                if(words.length()%2==0){
+                    op.append(words);
+                    op.append(' ');
+
+                }
+                words = new StringBuilder();
+
+            }
+            else{
+                words.append(inp.charAt(i));
+            }
+
+        }
+        if( words.length()%2==0) op.append(words);
+        System.out.println("The output string is \n"+op);
+    }
+}
